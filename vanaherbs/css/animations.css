@@ -1,0 +1,122 @@
+/* ============================================
+   animations.css — Keyframes & scroll-reveal classes
+   ============================================ */
+
+/* ---- Keyframes ---- */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes wa-ring {
+  0%   { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* ---- Scroll-reveal base states ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+/* ---- Stagger parent ---- */
+.stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+/* ---- Visible states (added by JS) ---- */
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.stagger.visible > *:nth-child(1) { animation: fade-up 0.6s 0.05s forwards; }
+.stagger.visible > *:nth-child(2) { animation: fade-up 0.6s 0.15s forwards; }
+.stagger.visible > *:nth-child(3) { animation: fade-up 0.6s 0.25s forwards; }
+.stagger.visible > *:nth-child(4) { animation: fade-up 0.6s 0.35s forwards; }
+.stagger.visible > *:nth-child(5) { animation: fade-up 0.6s 0.45s forwards; }
+
+/* ---- Respect reduced-motion preference ---- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero__eyebrow,
+  .hero__title,
+  .hero__subtitle,
+  .hero__actions {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .reveal,
+  .reveal-left,
+  .reveal-right {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .stagger > * {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}

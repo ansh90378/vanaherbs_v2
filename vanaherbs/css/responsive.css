@@ -1,0 +1,252 @@
+/* ============================================
+   responsive.css — Breakpoint overrides
+   ============================================ */
+
+/* ---- Tablet: ≤ 1024px ---- */
+@media (max-width: 1024px) {
+  :root {
+    --container-pad: var(--space-8);
+    --section-pad: 5rem;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-10);
+  }
+}
+
+/* ---- Tablet portrait: ≤ 900px ---- */
+@media (max-width: 900px) {
+  /* Hide desktop nav links, show hamburger */
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
+  }
+
+  /* About */
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .about__img-accent {
+    display: none;
+  }
+
+  .about__badge {
+    left: 0;
+  }
+
+  /* Products */
+  .products__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .products__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .products__note {
+    text-align: left;
+    max-width: 100%;
+  }
+
+  /* Why grid */
+  .why__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Process */
+  .process__steps {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .process__steps::before {
+    display: none;
+  }
+
+  /* Counter */
+  .counter-band__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    padding-inline: var(--space-8);
+  }
+
+  .counter-divider {
+    border-left: none;
+  }
+
+  .counter-band__grid > div:nth-child(odd) {
+    border-right: var(--border-gold-dim);
+    padding-right: var(--space-8);
+  }
+
+  /* Contact */
+  .contact__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .contact__img {
+    height: 350px;
+  }
+
+  /* Parallax */
+  .parallax-band {
+    height: 340px;
+  }
+
+  /* Hero scroll cue */
+  .hero__scroll-cue {
+    display: none;
+  }
+}
+
+/* ---- Mobile: ≤ 600px ---- */
+@media (max-width: 600px) {
+  :root {
+    --container-pad: var(--space-6);
+    --section-pad: 4rem;
+  }
+
+  .hero__title {
+    font-size: 2.875rem;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .products__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .process__steps {
+    grid-template-columns: 1fr;
+  }
+
+  .form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-2);
+    text-align: center;
+  }
+
+  .about__stats {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+
+  .contact__title {
+    font-size: 2rem;
+  }
+}
+
+/* ---- Very small: ≤ 400px ---- */
+@media (max-width: 400px) {
+  .hero__title {
+    font-size: 2.25rem;
+  }
+
+  .nav {
+    padding-inline: var(--space-5);
+  }
+}
+
+
+/* ============================================
+   Image-specific responsive overrides
+   ============================================ */
+
+/* ---- Tablet: ≤ 900px ---- */
+@media (max-width: 900px) {
+
+  /* About image — tighter portrait on tablet */
+  .about__img {
+    aspect-ratio: 4 / 3;
+  }
+
+  /* Parallax band — shorter on tablet, prevent tall gap */
+  .parallax-band {
+    height: clamp(220px, 35vw, 340px);
+  }
+
+  /* Contact image — less tall on tablet */
+  .contact__img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ---- Mobile: ≤ 600px ---- */
+@media (max-width: 600px) {
+
+  /* Hero — ensure full viewport height on mobile including browser chrome */
+  .hero {
+    min-height: 100dvh;    /* dvh = dynamic viewport height (iOS Safari safe) */
+  }
+
+  /* Hero slide — ensure image covers correctly on portrait mobile */
+  .hero__slide img {
+    object-position: 60% center;   /* keep mountains/landscape visible */
+  }
+
+  /* Product cards — wider aspect on single-column mobile */
+  .product-card__figure {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* About image — landscape aspect on mobile (less scroll needed) */
+  .about__img {
+    aspect-ratio: 16 / 9;
+  }
+
+  /* Hide accent image on mobile — avoids overflow at small widths */
+  .about__img-accent {
+    display: none;
+  }
+
+  /* About media — remove padding reserved for accent image */
+  .about__media {
+    padding-bottom: 0;
+    padding-right: 0;
+  }
+
+  /* Parallax band — minimal height on mobile */
+  .parallax-band {
+    height: clamp(200px, 50vw, 280px);
+  }
+
+  /* Contact image — landscape on mobile */
+  .contact__img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ---- Very small: ≤ 400px ---- */
+@media (max-width: 400px) {
+
+  /* Even more compact product card image */
+  .product-card__figure {
+    aspect-ratio: 4 / 3;
+  }
+}

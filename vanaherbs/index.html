@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="VanaHerbs — Premium wild herbs sourced from Uttarakhand. Reetha, Himalayan tea leaves, and rare botanicals. Bulk supply across India." />
+  <meta name="keywords" content="Himalayan herbs, Reetha, Soapnut, Uttarakhand herbs, bulk herbs India, wild herbs supplier" />
+  <meta property="og:title" content="VanaHerbs — Pure Himalayan Herbs" />
+  <meta property="og:description" content="Premium wild herbs sourced directly from Uttarakhand forests." />
+  <meta property="og:type" content="website" />
+  <title>VanaHerbs — Pure Himalayan Herbs</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header>
+    <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+      <a href="#" class="nav-logo" aria-label="VanaHerbs home">
+        <em>Vana</em>Herbs
+      </a>
+      <ul class="nav-links" role="list">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="btn btn--outline-gold nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Get in touch">
+        Enquire Now
+      </button>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <!-- Mobile menu -->
+    <div class="nav-mobile" id="navMobile" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="hero" aria-label="Hero">
+      <div class="hero__slides" id="heroSlides" aria-live="polite">
+        <div class="hero__slide hero__slide--active">
+          <img src="assets/images/hero-himalaya.jpg" alt="Himalayan mountains with rhododendron blossoms" loading="eager" fetchpriority="high" sizes="100vw" />
+        </div>
+        <div class="hero__slide">
+          <img src="assets/images/hero-flowers.jpg" alt="Wild flowers in the Himalayan forest valley" loading="lazy" sizes="100vw" />
+        </div>
+        <div class="hero__slide">
+          <img src="assets/images/tea-harvest.jpg" alt="Tea harvest on Himalayan hillside" loading="lazy" sizes="100vw" />
+        </div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">
+          <span class="eyebrow-line" aria-hidden="true"></span>
+          Uttarakhand, India — Est. 2022
+          <span class="eyebrow-line" aria-hidden="true"></span>
+        </p>
+        <h1 class="hero__title">
+          Where the <em>Himalayas</em><br />meet the market
+        </h1>
+        <p class="hero__subtitle">
+          We source and supply premium wild herbs — Reetha, Himalayan tea leaves, and rare Uttara Chandi botanicals — direct from forest to buyer.
+        </p>
+        <div class="hero__actions">
+          <button class="btn btn--gold" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+            Explore Products
+          </button>
+          <button class="btn btn--ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+            Request a Quote
+          </button>
+        </div>
+      </div>
+
+      <div class="hero__dots" id="slideDots" role="tablist" aria-label="Slide navigation">
+        <button class="dot dot--active" role="tab" aria-selected="true" aria-label="Slide 1" data-slide="0"></button>
+        <button class="dot" role="tab" aria-selected="false" aria-label="Slide 2" data-slide="1"></button>
+        <button class="dot" role="tab" aria-selected="false" aria-label="Slide 3" data-slide="2"></button>
+      </div>
+
+      <div class="hero__scroll-cue" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ========== MARQUEE ========== -->
+    <div class="marquee" aria-label="Product highlights" role="marquee">
+      <div class="marquee__track" id="marqueeTrack">
+        <div class="marquee__item"><span class="marquee__dot" aria-hidden="true"></span> Wild-harvested Reetha (Soapnut)</div>
+        <div class="marquee__item"><span class="marquee__dot" aria-hidden="true"></span> Himalayan Tea Leaves</div>
+        <div class="marquee__item"><span class="marquee__dot" aria-hidden="true"></span> Uttara Chandi Botanicals</div>
+        <div class="marquee__item"><span class="marquee__dot" aria-hidden="true"></span> Bulk Supply · Pan-India</div>
+        <div class="marquee__item"><span class="marquee__dot" aria-hidden="true"></span> 100% Natural · No Chemicals</div>
+        <div class="marquee__item"><span class="marquee__dot" aria-hidden="true"></span> Investor-Ready Supply Chain</div>
+        <!-- Duplicated for seamless loop -->
+        <div class="marquee__item" aria-hidden="true"><span class="marquee__dot"></span> Wild-harvested Reetha (Soapnut)</div>
+        <div class="marquee__item" aria-hidden="true"><span class="marquee__dot"></span> Himalayan Tea Leaves</div>
+        <div class="marquee__item" aria-hidden="true"><span class="marquee__dot"></span> Uttara Chandi Botanicals</div>
+        <div class="marquee__item" aria-hidden="true"><span class="marquee__dot"></span> Bulk Supply · Pan-India</div>
+        <div class="marquee__item" aria-hidden="true"><span class="marquee__dot"></span> 100% Natural · No Chemicals</div>
+        <div class="marquee__item" aria-hidden="true"><span class="marquee__dot"></span> Investor-Ready Supply Chain</div>
+      </div>
+    </div>
+
+    <!-- ========== ABOUT ========== -->
+    <section class="section about-section" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__grid">
+
+          <div class="about__media reveal-left">
+            <span class="about__badge">Est. 2022 · Uttarakhand</span>
+            <img
+              class="about__img"
+              src="assets/images/hero-flowers.jpg"
+              alt="Himalayan forest sourcing"
+              loading="lazy"
+            />
+            <img
+              class="about__img-accent"
+              src="assets/images/herbs-bowls.webp"
+              alt="Natural herbs close up"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="about__content reveal-right">
+            <p class="section-label">Our Story</p>
+            <h2 class="section-title" id="about-title">
+              Rooted in the <em>forests</em> of Uttarakhand
+            </h2>
+            <p class="section-body">
+              We are a Himalayan herb sourcing company built on one simple promise — to bring nature's finest botanicals directly from the forests of Uttarakhand to buyers across India, with zero compromise on quality.
+            </p>
+            <p class="section-body section-body--muted">
+              From the wild Reetha groves to high-altitude tea gardens, every product we supply is hand-selected, ethically harvested, and quality-checked before it reaches you.
+            </p>
+            <div class="about__stats stagger" role="list" aria-label="Company statistics">
+              <div role="listitem">
+                <p class="stat-num" data-target="5" data-suffix="+">0+</p>
+                <p class="stat-label">Herb varieties</p>
+              </div>
+              <div role="listitem">
+                <p class="stat-num" data-target="100" data-suffix="%">0%</p>
+                <p class="stat-label">Natural sourcing</p>
+              </div>
+              <div role="listitem">
+                <p class="stat-num" data-target="28" data-suffix="+">0+</p>
+                <p class="stat-label">States delivered</p>
+              </div>
+              <div role="listitem">
+                <p class="stat-num" data-target="3" data-suffix="+">0+</p>
+                <p class="stat-label">Years of trust</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PRODUCTS ========== -->
+    <section class="section products-section" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="products__header reveal">
+          <div>
+            <p class="section-label">What we supply</p>
+            <h2 class="section-title" id="products-title">Our <em>botanical</em> collection</h2>
+          </div>
+          <p class="products__note">
+            All products available in bulk. Custom packaging and supply contracts on request.
+          </p>
+        </div>
+
+        <div class="products__grid reveal" role="list" aria-label="Products">
+          <article class="product-card" role="listitem" tabindex="0">
+            <figure class="product-card__figure">
+              <img
+                src="assets/images/reetha.webp"
+                alt="Reetha soapnut — wild harvested"
+                loading="lazy"
+              />
+            </figure>
+            <div class="product-card__info">
+              <p class="product-card__category">Fruit / Ayurvedic</p>
+              <h3 class="product-card__name">Reetha — Soapnut</h3>
+              <p class="product-card__desc">Wild-harvested soapnut from Uttarakhand forests. Used in Ayurvedic medicine, natural hair care, and eco-cleaning. Available whole or powdered.</p>
+              <span class="product-card__tag">Bulk Available</span>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem" tabindex="0">
+            <figure class="product-card__figure">
+              <img
+                src="assets/images/tea-harvest.jpg"
+                alt="Himalayan tea leaves — hand picked"
+                loading="lazy"
+              />
+            </figure>
+            <div class="product-card__info">
+              <p class="product-card__category">Leaves / Premium</p>
+              <h3 class="product-card__name">Himalayan Tea Leaves</h3>
+              <p class="product-card__desc">Hand-picked from high-altitude gardens in Uttarakhand. Rich aroma, clean flavour — ideal for premium blends, wholesale, and export.</p>
+              <span class="product-card__tag">Seasonal Harvest</span>
+            </div>
+          </article>
+
+          <article class="product-card" role="listitem" tabindex="0">
+            <figure class="product-card__figure">
+              <img
+                src="assets/images/wild-herbs.webp"
+                alt="Wild Uttara Chandi herbs from Himalayan forests"
+                loading="lazy"
+              />
+            </figure>
+            <div class="product-card__info">
+              <p class="product-card__category">Wild Botanicals</p>
+              <h3 class="product-card__name">Uttara Chandi Herbs</h3>
+              <p class="product-card__desc">Rare regionally-specific herbs sourced from protected Himalayan forest zones. Dried, powdered, or raw forms available on inquiry.</p>
+              <span class="product-card__tag">Enquire for Details</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== COUNTER BAND ========== -->
+    <div class="counter-band" id="counterBand" aria-label="Key statistics">
+      <div class="counter-band__grid" role="list">
+        <div role="listitem">
+          <p class="counter-num" data-target="5" data-suffix="+">0</p>
+          <p class="counter-label">Herb varieties</p>
+        </div>
+        <div class="counter-divider" role="listitem">
+          <p class="counter-num" data-target="100" data-suffix="%">0</p>
+          <p class="counter-label">Natural &amp; wild</p>
+        </div>
+        <div class="counter-divider" role="listitem">
+          <p class="counter-num" data-target="28" data-suffix="+">0</p>
+          <p class="counter-label">States served</p>
+        </div>
+        <div class="counter-divider" role="listitem">
+          <p class="counter-num" data-target="3" data-suffix="+">0</p>
+          <p class="counter-label">Years experience</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== PARALLAX BAND ========== -->
+    <div class="parallax-band" id="parallaxBand" aria-label="Brand quote">
+      <img
+        class="parallax-band__img"
+        id="parallaxImg"
+        src="assets/images/hero-himalaya.jpg"
+        alt="Lush Himalayan mountain landscape"
+        loading="lazy"
+      />
+      <div class="parallax-band__overlay" aria-hidden="true"></div>
+      <div class="container parallax-band__content">
+        <div class="parallax-band__text reveal">
+          <blockquote>
+            "Every herb carries the <em>memory</em> of the mountain it grew on."
+          </blockquote>
+          <p>Our sourcing process respects the land, the ecosystem, and the communities that have tended these forests for generations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== WHY US ========== -->
+    <section class="section why-section" aria-labelledby="why-title">
+      <div class="container">
+        <div class="reveal">
+          <p class="section-label">Why choose us</p>
+          <h2 class="section-title" id="why-title">Built for <em>serious</em> buyers</h2>
+        </div>
+        <div class="why__grid stagger" role="list">
+          <div class="why-card" role="listitem">
+            <span class="why-card__number" aria-hidden="true">01</span>
+            <div class="why-card__icon" aria-hidden="true">🌲</div>
+            <h3 class="why-card__title">Direct Forest Sourcing</h3>
+            <p class="why-card__desc">No middlemen. We work directly with forest communities and farmers in Uttarakhand, ensuring purity at the source.</p>
+          </div>
+          <div class="why-card" role="listitem">
+            <span class="why-card__number" aria-hidden="true">02</span>
+            <div class="why-card__icon" aria-hidden="true">✓</div>
+            <h3 class="why-card__title">Quality Every Batch</h3>
+            <p class="why-card__desc">Every consignment is checked for purity, moisture content, and freshness. No shortcuts, no compromises.</p>
+          </div>
+          <div class="why-card" role="listitem">
+            <span class="why-card__number" aria-hidden="true">03</span>
+            <div class="why-card__icon" aria-hidden="true">📦</div>
+            <h3 class="why-card__title">Bulk Supply Ready</h3>
+            <p class="why-card__desc">Capacity for large-volume orders. Pan-India logistics network. Custom packaging for resellers available.</p>
+          </div>
+          <div class="why-card" role="listitem">
+            <span class="why-card__number" aria-hidden="true">04</span>
+            <div class="why-card__icon" aria-hidden="true">🤝</div>
+            <h3 class="why-card__title">Investor-Transparent</h3>
+            <p class="why-card__desc">Full supply chain documentation, pricing clarity, and long-term contracts for investors who need certainty.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PROCESS ========== -->
+    <section class="section process-section" id="process" aria-labelledby="process-title">
+      <div class="container">
+        <div class="reveal process-section__header">
+          <p class="section-label">How it works</p>
+          <h2 class="section-title" id="process-title">From <em>forest floor</em> to your door</h2>
+        </div>
+        <ol class="process__steps stagger" aria-label="Supply chain process steps">
+          <li class="process-step">
+            <div class="process-step__num" aria-hidden="true">1</div>
+            <h3 class="process-step__title">Forest Sourcing</h3>
+            <p class="process-step__desc">Ethically identified and collected from Uttarakhand's protected forests</p>
+          </li>
+          <li class="process-step">
+            <div class="process-step__num" aria-hidden="true">2</div>
+            <h3 class="process-step__title">Sorting &amp; Grading</h3>
+            <p class="process-step__desc">Hand-sorted and graded by quality, size, and potency</p>
+          </li>
+          <li class="process-step">
+            <div class="process-step__num" aria-hidden="true">3</div>
+            <h3 class="process-step__title">Processing &amp; Drying</h3>
+            <p class="process-step__desc">Cleaned and dried using traditional, hygienic methods</p>
+          </li>
+          <li class="process-step">
+            <div class="process-step__num" aria-hidden="true">4</div>
+            <h3 class="process-step__title">Quality Inspection</h3>
+            <p class="process-step__desc">Every batch inspected for purity before packaging</p>
+          </li>
+          <li class="process-step">
+            <div class="process-step__num" aria-hidden="true">5</div>
+            <h3 class="process-step__title">Pan-India Delivery</h3>
+            <p class="process-step__desc">Dispatched on schedule to anywhere in India</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT ========== -->
+    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact__grid">
+
+          <div class="contact__media reveal-left">
+            <img
+              class="contact__img"
+              src="assets/images/herbs-bowls.webp"
+              alt="Himalayan herbs ready for supply"
+              loading="lazy"
+            />
+            <address class="contact__details">
+              <div class="contact-detail">
+                <span class="contact-detail__icon" aria-hidden="true">📍</span>
+                Uttarakhand, India
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail__icon" aria-hidden="true">✉</span>
+                <a href="mailto:contact@vanaherbs.in">contact@vanaherbs.in</a>
+              </div>
+              <div class="contact-detail">
+                <span class="contact-detail__icon" aria-hidden="true">📱</span>
+                <a href="tel:+919800000000">+91 98XXX XXXXX</a>
+              </div>
+            </address>
+          </div>
+
+          <div class="contact__form-wrap reveal-right">
+            <p class="section-label">Get in touch</p>
+            <h2 class="section-title contact__title" id="contact-title">
+              Let's source <em>together</em>
+            </h2>
+            <p class="section-body section-body--muted">
+              Whether you are a buyer, distributor, or investor — tell us what you need and we'll respond within 24 hours.
+            </p>
+
+            <form class="contact-form" id="contactForm" novalidate aria-label="Enquiry form">
+              <div class="form__row">
+                <div class="form__group">
+                  <label for="name" class="form__label">Your name <span aria-hidden="true">*</span></label>
+                  <input type="text" id="name" name="name" class="form__input" placeholder="Full name" required autocomplete="name" />
+                </div>
+                <div class="form__group">
+                  <label for="company" class="form__label">Company</label>
+                  <input type="text" id="company" name="company" class="form__input" placeholder="Organisation" autocomplete="organization" />
+                </div>
+              </div>
+              <div class="form__row">
+                <div class="form__group">
+                  <label for="email" class="form__label">Email <span aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" class="form__input" placeholder="you@email.com" required autocomplete="email" />
+                </div>
+                <div class="form__group">
+                  <label for="phone" class="form__label">Phone / WhatsApp</label>
+                  <input type="tel" id="phone" name="phone" class="form__input" placeholder="+91 XXXXX XXXXX" autocomplete="tel" />
+                </div>
+              </div>
+              <div class="form__group">
+                <label for="product" class="form__label">Product of interest <span aria-hidden="true">*</span></label>
+                <select id="product" name="product" class="form__select" required>
+                  <option value="" disabled selected>Select a product</option>
+                  <option value="reetha">Reetha (Soapnut)</option>
+                  <option value="tea">Himalayan Tea Leaves</option>
+                  <option value="chandi">Uttara Chandi Herbs</option>
+                  <option value="all">Multiple / All products</option>
+                </select>
+              </div>
+              <div class="form__group">
+                <label for="message" class="form__label">Your requirement</label>
+                <textarea id="message" name="message" class="form__textarea" placeholder="Quantity, frequency, timeline, any special notes..."></textarea>
+              </div>
+              <button type="submit" class="btn btn--gold btn--full" id="submitBtn">
+                Send Enquiry →
+              </button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <p class="footer__logo"><em>Vana</em>Herbs</p>
+          <p class="footer__tagline">Sourcing the finest Himalayan herbs — naturally, ethically, and reliably — since 2022.</p>
+          <div class="footer__social" role="list" aria-label="Social media links">
+            <a href="#" class="social-btn" role="listitem" aria-label="Instagram">in</a>
+            <a href="#" class="social-btn" role="listitem" aria-label="LinkedIn">li</a>
+            <a href="https://wa.me/919800000000" class="social-btn" role="listitem" aria-label="WhatsApp">wa</a>
+          </div>
+        </div>
+        <nav class="footer__nav" aria-label="Products footer navigation">
+          <p class="footer__heading">Products</p>
+          <ul role="list">
+            <li><a href="#products">Reetha (Soapnut)</a></li>
+            <li><a href="#products">Himalayan Tea Leaves</a></li>
+            <li><a href="#products">Uttara Chandi Herbs</a></li>
+          </ul>
+        </nav>
+        <nav class="footer__nav" aria-label="Company footer navigation">
+          <p class="footer__heading">Company</p>
+          <ul role="list">
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#process">Our Process</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+          </ul>
+        </nav>
+        <div class="footer__contact">
+          <p class="footer__heading">Contact</p>
+          <ul role="list">
+            <li>Uttarakhand, India</li>
+            <li><a href="mailto:contact@vanaherbs.in">contact@vanaherbs.in</a></li>
+            <li><a href="https://wa.me/919800000000">WhatsApp Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>© 2025 VanaHerbs. All rights reserved.</span>
+        <span>Uttarakhand, India</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== WHATSAPP FAB ========== -->
+  <a
+    href="https://wa.me/919800000000?text=Hi%20VanaHerbs%2C%20I%20am%20interested%20in%20your%20products"
+    class="wa-fab"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Chat with us on WhatsApp"
+  >
+    <span class="wa-fab__label">Chat on WhatsApp</span>
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <!-- Scripts -->
+  <script src="js/cursor.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/hero.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/counters.js" defer></script>
+  <script src="js/parallax.js" defer></script>
+  <script src="js/form.js" defer></script>
+
+</body>
+</html>
