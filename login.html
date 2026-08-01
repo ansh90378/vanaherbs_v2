@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sign in to your VanaHerbs account" />
+  <title>Sign In — VanaHerbs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body class="auth-page">
+
+  <header>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <a href="index.html" class="nav-logo" aria-label="VanaHerbs home">
+        <em>Vana</em>Herbs
+      </a>
+      <a href="index.html" class="btn btn--outline-gold nav-cta">Back to site</a>
+    </nav>
+  </header>
+
+  <main class="auth-main">
+    <div class="auth-card">
+      <p class="auth-card__eyebrow">Account</p>
+      <h1 class="auth-card__title">Welcome back</h1>
+      <p class="auth-card__subtitle">Sign in to access your VanaHerbs account, or create one to get started.</p>
+
+      <div class="auth-tabs" role="tablist" aria-label="Authentication mode">
+        <button type="button" class="auth-tabs__btn auth-tabs__btn--active" id="loginTab" role="tab" aria-selected="true" aria-controls="loginPanel">
+          Sign In
+        </button>
+        <button type="button" class="auth-tabs__btn" id="registerTab" role="tab" aria-selected="false" aria-controls="registerPanel">
+          Register
+        </button>
+      </div>
+
+      <div id="formAlert" class="auth-alert" hidden role="alert"></div>
+
+      <!-- Sign In -->
+      <div class="auth-panel" id="loginPanel" role="tabpanel" aria-labelledby="loginTab">
+        <form id="loginForm" novalidate>
+          <div class="form__group">
+            <label for="loginEmail" class="form__label">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="loginEmail" name="email" class="form__input" placeholder="you@email.com" required autocomplete="email" />
+          </div>
+          <div class="form__group">
+            <label for="loginPassword" class="form__label">Password <span aria-hidden="true">*</span></label>
+            <input type="password" id="loginPassword" name="password" class="form__input" placeholder="Your password" required autocomplete="current-password" />
+          </div>
+          <button type="submit" class="btn btn--gold btn--full" id="loginSubmitBtn">Sign In</button>
+        </form>
+      </div>
+
+      <!-- Register -->
+      <div class="auth-panel" id="registerPanel" role="tabpanel" aria-labelledby="registerTab" hidden>
+        <form id="registerForm" novalidate>
+          <div class="form__group">
+            <label for="displayName" class="form__label">Display name</label>
+            <input type="text" id="displayName" name="displayName" class="form__input" placeholder="Your name (optional)" autocomplete="name" />
+          </div>
+          <div class="form__group">
+            <label for="registerEmail" class="form__label">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="registerEmail" name="email" class="form__input" placeholder="you@email.com" required autocomplete="email" />
+          </div>
+          <div class="form__group">
+            <label for="registerPassword" class="form__label">Password <span aria-hidden="true">*</span></label>
+            <input type="password" id="registerPassword" name="password" class="form__input" placeholder="Create a password" required autocomplete="new-password" />
+            <p class="auth-hint">At least 8 characters with uppercase, lowercase, and a digit.</p>
+          </div>
+          <div class="form__group">
+            <label for="confirmPassword" class="form__label">Confirm password <span aria-hidden="true">*</span></label>
+            <input type="password" id="confirmPassword" name="confirmPassword" class="form__input" placeholder="Repeat password" required autocomplete="new-password" />
+          </div>
+          <button type="submit" class="btn btn--gold btn--full" id="registerSubmitBtn">Create Account</button>
+        </form>
+      </div>
+
+      <p class="auth-footer-link">
+        <a href="index.html">← Return to homepage</a>
+      </p>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

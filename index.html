@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="css/sections.css" />
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/auth.css" />
 </head>
 <body>
 
@@ -42,9 +43,17 @@
         <li><a href="#process">Process</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="btn btn--outline-gold nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})" aria-label="Get in touch">
-        Enquire Now
-      </button>
+      <div class="nav-auth" id="navAuth">
+        <a href="login.html" class="btn btn--outline-gold nav-cta" id="navLoginBtn" aria-label="Sign in to your account">
+          Login
+        </a>
+        <div class="nav-user" id="navUser" hidden>
+          <span class="nav-user__name" id="navUserName"></span>
+          <button type="button" class="btn btn--outline-gold nav-cta" id="navLogoutBtn" aria-label="Sign out">
+            Logout
+          </button>
+        </div>
+      </div>
       <button class="nav-hamburger" id="navHamburger" aria-label="Toggle menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -56,6 +65,7 @@
         <li><a href="#about">Our Story</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="login.html">Login</a></li>
       </ul>
     </div>
   </header>
@@ -516,6 +526,8 @@
   <script src="js/counters.js" defer></script>
   <script src="js/parallax.js" defer></script>
   <script src="js/form.js" defer></script>
+  <script src="js/config.js" defer></script>
+  <script src="js/auth.js" defer></script>
 
 </body>
 </html>
