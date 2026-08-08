@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/responsive.css" />
   <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="css/product-scroller.css" />
 </head>
 <body>
 
@@ -196,7 +197,26 @@
     </section>
 
     <!-- ========== PRODUCTS ========== -->
-    <section class="section products-section" id="products" aria-labelledby="products-title">
+
+    <section class="section products-section product-scroller-section" id="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="products__header reveal">
+          <div>
+            <p class="section-label">What we supply</p>
+            <h2 class="section-title" id="products-title">Our <em>botanical</em> collection</h2>
+          </div>
+          <p class="products__note">
+            All products available in bulk. Custom packaging and supply contracts on request.
+          </p>
+        </div>
+
+        <div class="product-scroller-wrap reveal">
+          <div id="product-scroller" class="product-scroller" role="list" aria-label="Products"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <section class="section products-section" id="products" aria-labelledby="products-title">
       <div class="container">
         <div class="products__header reveal">
           <div>
@@ -258,7 +278,7 @@
           </article>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- ========== COUNTER BAND ========== -->
     <div class="counter-band" id="counterBand" aria-label="Key statistics">
@@ -528,6 +548,7 @@
   <script src="js/form.js" defer></script>
   <script src="js/config.js" defer></script>
   <script src="js/auth.js" defer></script>
+  <script src="js/product-scroller.js" defer></script>
 
 </body>
 </html>
