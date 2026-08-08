@@ -15,11 +15,9 @@
  * matching your existing WhatsApp-first contact flow.
  */
 
-const WHATSAPP_NUMBER = "9654385462"; // TODO: replace with real number, same as ShivaRoots fix
-
 function buildWhatsAppLink(productName) {
   const message = `Hi, I'm interested in bulk enquiry for ${productName}. Could you share pricing and availability?`;
-  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+  return `/api/whatsapp?text=${encodeURIComponent(message)}`;
 }
 
 function productImagePath(product) {
