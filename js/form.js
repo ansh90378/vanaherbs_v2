@@ -80,28 +80,72 @@ if (form && submitBtn) {
   });
 
   // Form submission
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     if (!validateForm()) return;
 
-    // Simulate async submission
+    const auth = window.VanaHerbsAuth;
+    const user = auth?.getStoredUser?.() || null;
+
+    if (!auth?.isLoggedIn?.() || !user?.email) {
+      alert('Please log in before sending an enquiry.');
+      window.location.href = 'login.html';
+      return;
+    }
+
     submitBtn.textContent = 'Sending…';
-    submitBtn.disabled    = true;
+    submitBtn.disabled = true;
+    submitBtn.style.backgroundColor = '';
+    submitBtn.style.color = '';
 
-    setTimeout(() => {
-      submitBtn.textContent         = '✓ Enquiry sent — we\'ll be in touch within 24h';
+    try {
+      const formData = new FormData(form);
+
+      const payload = {
+        ...Object.fromEntries(formData.entries()),
+        user_email: user.email
+      };
+
+      const response = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result?.error || 'Unable to send enquiry.');
+      }
+
+      submitBtn.textContent = '✓ Enquiry sent — we\'ll be in touch within 24h';
       submitBtn.style.backgroundColor = '#3B6D11';
-      submitBtn.style.color           = '#C0DD97';
+      submitBtn.style.color = '#C0DD97';
 
-      // Optional: reset form after delay
+      form.reset();
+
       setTimeout(() => {
-        form.reset();
-        submitBtn.textContent         = 'Send Enquiry →';
+        submitBtn.textContent = 'Send Enquiry →';
         submitBtn.style.backgroundColor = '';
-        submitBtn.style.color           = '';
-        submitBtn.disabled              = false;
-      }, 5000);
-    }, 1200);
+        submitBtn.style.color = '';
+        submitBtn.disabled = false;
+      }, 4000);
+
+    } catch (error) {
+      submitBtn.textContent = 'Failed to send enquiry';
+      submitBtn.style.backgroundColor = '#7a1f1f';
+      submitBtn.style.color = '#ffd7d7';
+      console.error(error);
+
+      setTimeout(() => {
+        submitBtn.textContent = 'Send Enquiry →';
+        submitBtn.style.backgroundColor = '';
+        submitBtn.style.color = '';
+        submitBtn.disabled = false;
+      }, 3000);
+    }
   });
 }
