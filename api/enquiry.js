@@ -3,7 +3,8 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Method not allowed' });
   }
 
-  try {
+  try 
+  {
     const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body || {};
     const {
       name,
@@ -14,6 +15,19 @@ export default async function handler(req, res) {
       message = '',
       user_email
     } = body;
+
+    const rawProduct = body.product;
+    const productList = Array.isArray(rawProduct)
+    ? rawProduct
+    : rawProduct
+        ? [rawProduct]
+        : [];
+
+    if (!productList.length) {
+    return res.status(400).json({ error: 'Please select at least one product.' });
+    }
+
+    const productText = productList.join(', ');
 
     if (!name || !product) {
       return res.status(400).json({
@@ -48,7 +62,7 @@ export default async function handler(req, res) {
       <p><strong>Company:</strong> ${company || 'Not provided'}</p>
       <p><strong>Logged-in user email:</strong> ${loggedInUserEmail}</p>
       <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-      <p><strong>Product:</strong> ${product}</p>
+      <p><strong>Product:</strong> ${productText}</p>
       <p><strong>Requirement:</strong></p>
       <p>${(message || 'No message provided').replace(/\n/g, '<br>')}</p>
     `;
@@ -66,7 +80,9 @@ export default async function handler(req, res) {
       id: data?.id || null
     });
 
-  } catch (error) {
+  } 
+  catch (error) 
+  {
     console.error('Enquiry email failed:', error);
     return res.status(500).json({
       error: 'Failed to send enquiry email.'

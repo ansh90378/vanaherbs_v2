@@ -63,7 +63,17 @@ if (form && submitBtn) {
     const fields = form.querySelectorAll('input, select, textarea');
 
     fields.forEach((field) => {
-      const error = validateField(field);
+      let error = null;
+
+      if (field.name === 'product') {
+        const selected = Array.from(field.selectedOptions).filter((option) => option.value);
+        if (field.required && selected.length === 0) {
+          error = 'Please select at least one product.';
+        }
+      } else {
+        error = validateField(field);
+      }
+
       setFieldError(field, error);
       if (error) isValid = false;
     });
@@ -101,10 +111,12 @@ if (form && submitBtn) {
 
     try {
       const formData = new FormData(form);
+      const selectedProducts = Array.from(formData.getAll('product')).filter(Boolean);
 
       const payload = {
         ...Object.fromEntries(formData.entries()),
-        user_email: user.email
+        user_email: user.email,
+        product: selectedProducts
       };
 
       const response = await fetch('/api/enquiry', {
@@ -114,6 +126,11 @@ if (form && submitBtn) {
         },
         body: JSON.stringify(payload)
       });
+
+      if (selectedProducts.length === 0) {
+        alert('Please select at least one product.');
+        return;
+      }
 
       const result = await response.json();
 
