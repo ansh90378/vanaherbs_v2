@@ -2,6 +2,6 @@
   "name": "vanaherbs-V2",
   "private": true,
   "dependencies": {
-    "resend": "^4.1.0"
+    "nodemailer": "^6.9.16"
   }
 }
