@@ -10,7 +10,7 @@
   max-height: 1080px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
 }
 
@@ -54,7 +54,8 @@
 .hero__content {
   position: relative;
   z-index: var(--z-raised);
-  text-align: center;
+  text-align: left;
+  margin-left: clamp(1.5rem, 4vw, 3rem);
   padding: clamp(1rem, 4vw, 2rem);
   max-width: min(760px, 92vw);    /* never overflow on narrow screens */
 }
@@ -105,7 +106,7 @@
   color: var(--text-secondary);
   line-height: 1.8;
   max-width: min(480px, 90%);
-  margin-inline: auto;
+  margin-left: 0;
   margin-bottom: var(--space-8);
   opacity: 0;
   transform: translateY(20px);
@@ -115,7 +116,7 @@
 .hero__actions {
   display: flex;
   gap: var(--space-4);
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   opacity: 0;
   animation: fade-up 0.9s 1s forwards;
@@ -229,6 +230,35 @@
   flex-direction: column;
 }
 
+.about__heading {
+  margin: var(--space-5) 0 var(--space-2);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 400;
+}
+
+.about__quote {
+  margin: var(--space-5) 0;
+  padding-left: var(--space-4);
+  border-left: var(--border-gold-mid);
+  color: var(--color-gold);
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.about__list {
+  display: grid;
+  gap: var(--space-2);
+  margin: 0;
+  padding-left: var(--space-5);
+  color: var(--text-secondary);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
 .about__stats {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -270,6 +300,7 @@
   position: relative;
   /* FIX: fluid height with clamp — avoids the broken overflow on mobile */
   height: clamp(260px, 40vw, 480px);
+  background-color: var(--color-dark);
   overflow: hidden;
   isolation: isolate;           /* creates new stacking context, prevents bleed */
 }
@@ -286,18 +317,17 @@
   object-fit: cover;
   object-position: center center;
   will-change: transform;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 16%, black 84%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 16%, black 84%, transparent 100%);
   /* JS overrides transform, so we only set translate here as baseline */
 }
 
 .parallax-band__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(13, 26, 8, 0.85) 0%,
-    rgba(13, 26, 8, 0.4) 55%,
-    rgba(13, 26, 8, 0.75) 100%
-  );
+  background:
+    linear-gradient(to bottom, var(--color-dark) 0%, transparent 22%, transparent 78%, var(--color-dark) 100%),
+    linear-gradient(90deg, rgba(13, 26, 8, 0.78) 0%, rgba(13, 26, 8, 0.28) 55%, rgba(13, 26, 8, 0.7) 100%);
 }
 
 .parallax-band__content {

@@ -39,7 +39,7 @@ Before going live, update these placeholders:
 |---|---|---|
 | Business name | `index.html` | Replace all `VanaHerbs` / `Vana` occurrences |
 | WhatsApp number | `index.html`, `js/form.js` | Replace `919800000000` with real number |
-| Email address | `index.html` | Replace `contact@vanaherbs.in` |
+| Email address | `index.html` | Replace `neeraj.zayden@gmail.com` |
 | Phone number | `index.html` | Replace `+91 98XXX XXXXX` |
 | Address | `index.html` | Update city/state if needed |
 | Est. year | `index.html` | Update `Est. 2022` in hero eyebrow |

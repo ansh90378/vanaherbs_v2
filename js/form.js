@@ -61,15 +61,14 @@ if (form && submitBtn) {
   function validateForm() {
     let isValid = true;
     const fields = form.querySelectorAll('input, select, textarea');
+    const productFields = form.querySelectorAll('input[name="product"]:checked');
+    const productOptions = document.getElementById('productOptions');
 
     fields.forEach((field) => {
       let error = null;
 
       if (field.name === 'product') {
-        const selected = Array.from(field.selectedOptions).filter((option) => option.value);
-        if (field.required && selected.length === 0) {
-          error = 'Please select at least one product.';
-        }
+        return;
       } else {
         error = validateField(field);
       }
@@ -77,6 +76,13 @@ if (form && submitBtn) {
       setFieldError(field, error);
       if (error) isValid = false;
     });
+
+    if (productOptions && productFields.length === 0) {
+      setFieldError(productOptions, 'Please select at least one product.');
+      isValid = false;
+    } else if (productOptions) {
+      setFieldError(productOptions, null);
+    }
 
     return isValid;
   }

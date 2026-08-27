@@ -36,6 +36,18 @@ function animateCounter(el) {
   requestAnimationFrame(tick);
 }
 
+function updateProductCount(count) {
+  document.querySelectorAll('[data-product-count]').forEach((element) => {
+    element.dataset.target = count;
+
+    if (element.dataset.isVisible === 'true') {
+      animateCounter(element);
+    }
+  });
+}
+
+window.updateProductCount = updateProductCount;
+
 /**
  * Observe a container and kick off its counters when visible.
  * @param {string} containerSelector — wrapping element to watch
@@ -49,6 +61,7 @@ function observeCounters(containerSelector, counterSelector) {
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        entry.target.dataset.isVisible = 'true';
         entry.target.querySelectorAll(counterSelector).forEach(animateCounter);
         obs.unobserve(entry.target);
       }

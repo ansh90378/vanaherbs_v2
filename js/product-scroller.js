@@ -44,6 +44,24 @@ function renderProductCard(product) {
   return card;
 }
 
+function renderProductOptions(products) {
+  const container = document.getElementById("productOptions");
+  if (!container) return;
+
+  container.innerHTML = products.map((product) => `
+    <label class="product-option">
+      <input type="checkbox" name="product" value="${product.name}" />
+      <span>${product.name}</span>
+    </label>
+  `).join("");
+}
+
+function notifyProductCount(count) {
+  if (window.updateProductCount) {
+    window.updateProductCount(count);
+  }
+}
+
 function injectModalMarkup() {
   if (document.getElementById("product-modal-backdrop")) return;
   const backdrop = document.createElement("div");
@@ -140,6 +158,9 @@ async function initProductScroller(jsonPath = "products.json", containerId = "pr
   }
 
   container.parentElement.insertBefore(renderScrollerNav(container), container);
+
+  renderProductOptions(products);
+  notifyProductCount(products.length);
 
   products.forEach((product) => {
     container.appendChild(renderProductCard(product));
