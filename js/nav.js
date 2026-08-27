@@ -9,7 +9,7 @@ const mobileLinks   = mobileMenu?.querySelectorAll('a');
 
 // ---- Sticky nav shadow on scroll ----
 function handleNavScroll() {
-  const scrolled = window.scrollY > 60;
+  const scrolled = window.scrollY > 12;
   nav?.classList.toggle('nav--scrolled', scrolled);
 }
 

@@ -31,6 +31,8 @@ if (band && img) {
       const clamped = Math.min(1, Math.max(0, pct));
       const offset  = (clamped - 0.5) * MAX_OFFSET * 2;   // range: -MAX_OFFSET … +MAX_OFFSET
 
+      band.style.setProperty('--parallax-progress', clamped.toFixed(3));
+
       // Keep the centring translate and add the vertical parallax offset
       img.style.transform = `translate(-50%, calc(-50% + ${offset}px))`;
     }

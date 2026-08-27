@@ -109,7 +109,14 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--space-5) var(--space-12);
-  transition: background var(--transition-slow), padding var(--transition-slow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-110%);
+  transition:
+    background var(--transition-slow),
+    padding var(--transition-slow),
+    opacity var(--transition-base),
+    transform var(--transition-slow);
 }
 
 .nav--scrolled {
@@ -118,6 +125,9 @@
   -webkit-backdrop-filter: blur(20px);
   padding-block: var(--space-4);
   border-bottom: var(--border-gold-dim);
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .nav-logo {

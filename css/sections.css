@@ -305,6 +305,20 @@
   isolation: isolate;           /* creates new stacking context, prevents bleed */
 }
 
+.parallax-band::after {
+  content: '';
+  position: absolute;
+  inset: -12%;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 35%, rgba(200, 169, 110, 0.12), transparent 28%),
+    linear-gradient(120deg, rgba(13, 26, 8, 0.08), rgba(200, 169, 110, 0.06), rgba(13, 26, 8, 0.12));
+  transform: translateY(calc((var(--parallax-progress, 0.5) - 0.5) * -28px));
+  transition: transform 120ms linear;
+  will-change: transform;
+}
+
 /* FIX: Replace problematic inset/-15%/130% with a clean centred absolute approach */
 .parallax-band__img {
   position: absolute;
@@ -325,6 +339,7 @@
 .parallax-band__overlay {
   position: absolute;
   inset: 0;
+  z-index: 2;
   background:
     linear-gradient(to bottom, var(--color-dark) 0%, transparent 22%, transparent 78%, var(--color-dark) 100%),
     linear-gradient(90deg, rgba(13, 26, 8, 0.78) 0%, rgba(13, 26, 8, 0.28) 55%, rgba(13, 26, 8, 0.7) 100%);
@@ -332,7 +347,7 @@
 
 .parallax-band__content {
   position: relative;
-  z-index: var(--z-raised);
+  z-index: 3;
   height: 100%;
   display: flex;
   align-items: center;
