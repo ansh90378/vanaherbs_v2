@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Your VanaHerbs orders." />
+  <title>Orders - VanaHerbs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/auth.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body class="dashboard-page">
+  <header>
+    <nav class="nav dashboard-nav" aria-label="Account navigation">
+      <a href="index.html" class="btn btn--outline-gold dashboard-home">Back to home</a>
+      <a href="index.html" class="nav-logo" aria-label="VanaHerbs home"><em>Vana</em>Herbs</a>
+      <div class="nav-auth">
+        <button type="button" class="btn btn--outline-gold nav-cta" id="dashboardLogout">Sign out</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="dashboard-main">
+    <section class="dashboard-heading">
+      <p class="auth-card__eyebrow">Your account</p>
+      <h1 class="auth-card__title">Order <em>tracking</em></h1>
+      <p class="auth-card__subtitle">Follow your herbs from enquiry to delivery.</p>
+      <p class="dashboard-user" id="dashboardUser">Checking your session...</p>
+    </section>
+
+    <section class="dashboard-orders" aria-labelledby="ordersHeading">
+      <div class="dashboard-orders__top">
+        <h2 id="ordersHeading">Your orders</h2>
+        <button class="btn btn--outline-gold" type="button" id="refreshOrders">Refresh</button>
+      </div>
+      <p class="dashboard-message" id="ordersLoading">Loading your orders...</p>
+      <p class="dashboard-message" id="ordersEmpty" hidden>No orders yet.</p>
+      <p class="dashboard-message dashboard-message--error" id="ordersError" hidden>Orders could not be loaded. Please try again.</p>
+      <div class="dashboard-order-list" id="orderList"></div>
+    </section>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

@@ -34,10 +34,6 @@
 </head>
 <body>
 
-  <!-- Custom Cursor -->
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
-
   <!-- ========== NAVIGATION ========== -->
   <header>
     <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
@@ -56,6 +52,7 @@
         </a>
         <div class="nav-user" id="navUser" hidden>
           <span class="nav-user__name" id="navUserName"></span>
+          <a href="dashboard.html" class="btn btn--outline-gold nav-cta">Orders</a>
           <button type="button" class="btn btn--outline-gold nav-cta" id="navLogoutBtn" aria-label="Sign out">
             Logout
           </button>
@@ -547,7 +544,6 @@
   </a>
 
   <!-- Scripts -->
-  <script src="js/cursor.js" defer></script>
   <script src="js/nav.js" defer></script>
   <script src="js/hero.js" defer></script>
   <script src="js/animations.js" defer></script>

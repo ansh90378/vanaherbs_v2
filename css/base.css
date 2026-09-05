@@ -9,7 +9,6 @@ body {
   color: var(--text-primary);
   background-color: var(--color-dark);
   overflow-x: hidden;
-  cursor: none;
 }
 
 /* ---- Noise texture overlay ---- */
